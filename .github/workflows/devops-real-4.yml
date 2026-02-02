@@ -14,9 +14,21 @@ jobs:
 
     - name: Setpu python
       uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
 
     - name: Install dependencies
       run: pip install -r requirements.txt
 
-  
+    - name: Formatting test
+      run: black .
+    
+    - name: Lint test
+      run: flake8 .
+    
+    - name: Static analysis
+      run: bandit -r .
+
+    - name: Unit test
+      run: pytest test_app.py  
   
