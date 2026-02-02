@@ -1,0 +1,22 @@
+name: Devops project real 4
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  devops-real4-pipeline:
+    run-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setpu python
+      uses: actions/setup-python@v4
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+  
+  
