@@ -32,6 +32,8 @@ jobs:
     - name: Unit test
       run: pytest test_app.py  
 
+      #Creds rectified      
+
     - name: Dockerhub login
       uses: docker/login-action@v2
       with:
