@@ -2,7 +2,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@1. route('/')
+@app.route('/')  # ✅ FIXED: Changed @1. to @app
 def hello():
     return "DevOps Pipeline is Active!"
 
