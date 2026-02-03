@@ -35,7 +35,8 @@ jobs:
       #Creds rectified      
 
     - name: Docker Login
-        run: |
+        run: docker/login-action@v3
+        with:
           echo "${{ secrets.DOCKERHUB_TOKEN }}" | \
           docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
