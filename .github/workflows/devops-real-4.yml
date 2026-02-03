@@ -35,10 +35,10 @@ jobs:
       #Creds rectified      
 
     - name: Docker Login
-        run: docker/login-action@v3
-        with:
-          echo "${{ secrets.DOCKERHUB_TOKEN }}" | \
-          docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+      uses: docker/login-action@v3
+      with:
+        echo "${{ secrets.DOCKERHUB_TOKEN }}" | \
+        docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
     - name: Build
       run: docker build -t shaphered777/devops-real-4:latest .
