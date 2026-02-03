@@ -37,8 +37,8 @@ jobs:
     - name: Docker Login
       uses: docker/login-action@v3
       with:
-        echo "${{ secrets.DOCKERHUB_TOKEN }}" | \
-        docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+        username: ${{ secrets.DOCKERHUB_TOKEN }}
+        password: ${{ secrets.DOCKERHUB_USERNAME }}
 
     - name: Build
       run: docker build -t shaphered777/devops-real-4:latest .
