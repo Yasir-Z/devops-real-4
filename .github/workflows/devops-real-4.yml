@@ -41,7 +41,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Build
-      run: docker build -t shaphered777/devops-real-4:latest .
+      run: docker build -t shepherd777/devops-real-4:latest .
 
     - name: Push
-      run: docker push shaphered777/devops-real-4:latest
+      run: docker push shepherd777/devops-real-4:latest
